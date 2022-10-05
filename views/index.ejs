@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File sharing</title>
+    
+</head>
+<body>
+    <!-- this was working on server not client -->
+    <%  if(locals.fileLink != null) {  %>
+        <div style="margin-bottom:1rem ;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        " >
+            Your file is uploaded : 
+            <a href=" <%= locals.fileLink %> "> <%= locals.fileLink  %> </a>
+        </div>
+        <% } %>
+
+    <form action="/upload" method="post" enctype="multipart/form-data"
+    style="
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: auto 1fr;
+    max-width: 500px;
+    margin: 40px auto;
+    ">
+        <label for="file" >File : </label>
+        <input type="file" id="file" name="file" required />
+        <label for="password" style="margin-top: 20px;">Password : </label>
+        <input type="password" id="password" name="password"
+        style="margin-top: 20px;"/>
+        <button type="submit" 
+        style="
+        grid-column: span 2;
+        height: 30px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 20px;
+        "
+        >share</button>
+    </form>
+</body>
+</html>
