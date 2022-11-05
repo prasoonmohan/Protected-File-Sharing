@@ -17,7 +17,7 @@
 
 -   mongodb
 
-## Snap 🤖
+## Snap 🤖 ...
 
 ![App Screenshot](./assets/images/preview.png)
 
